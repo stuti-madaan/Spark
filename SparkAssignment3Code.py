@@ -1,7 +1,7 @@
 # Databricks notebook source exported at Sun, 20 Nov 2016 23:12:27 UTC
 #Linking to AWS# 
-ACCESS_KEY = "AKIAIXPIV5CFMFIVYMJA"
-SECRET_KEY = "bvFtwx9Z+TRYH6dXIR8VILYqqS7Fc5zjj/kT2v4z"
+ACCESS_KEY = ""
+SECRET_KEY = ""
 ENCODED_SECRET_KEY = SECRET_KEY.replace("/", "%2F")
 AWS_BUCKET_NAME = "dbmshadoop"
 MOUNT_NAME = "S3"
