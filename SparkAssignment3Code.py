@@ -1,15 +1,3 @@
-# Databricks notebook source exported at Sun, 20 Nov 2016 23:12:27 UTC
-#Linking to AWS# 
-ACCESS_KEY = ""
-SECRET_KEY = ""
-ENCODED_SECRET_KEY = SECRET_KEY.replace("/", "%2F")
-AWS_BUCKET_NAME = "dbmshadoop"
-MOUNT_NAME = "S3"
-dbutils.fs.unmount("/mnt/S3")
-dbutils.fs.mount("s3a://%s:%s@%s" % (ACCESS_KEY, ENCODED_SECRET_KEY, AWS_BUCKET_NAME), "/mnt/%s" % MOUNT_NAME)
-display(dbutils.fs.ls("/mnt/S3/data/Spark3"))
-
-# COMMAND ----------
 
 # Load a dataframe from a CSV file (with header line).  Change the filename to one that matches your S3 bucket.
 eventDF = sqlContext.read.format('com.databricks.spark.csv').options(header='true', inferSchema='true').load('/mnt/S3/data/Spark3/dataSet3Events.csv')
